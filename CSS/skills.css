@@ -1,0 +1,46 @@
+/* ===================== SKILLSET ===================== */
+
+/* Contenedor de los skills (iconos) */
+#skillset div {
+  display: flex;                 /* Coloca los iconos en línea horizontal */
+  justify-content: center;       /* Centra los iconos horizontalmente */
+  gap: 20px;                     /* Espacio entre cada skill */
+  flex-wrap: wrap;               /* Permite que los iconos se ajusten a varias filas en pantallas pequeñas */
+  margin-top: 20px;              /* Espacio superior respecto al título */
+}
+
+/* Cada icono individual */
+#skillset div > div {
+  position: relative;            /* Necesario para posicionar el tooltip */
+  width: 70px;                   /* Ancho fijo del icono */
+  height: 70px;                  /* Alto fijo del icono */
+  cursor: pointer;               /* Cambia el cursor al pasar sobre el icono */
+  transition: transform 0.3s ease; /* Suaviza la animación al hacer hover */
+}
+
+/* Efecto hover sobre cada icono */
+#skillset div > div:hover {
+  transform: scale(1.3);         /* Aumenta el tamaño del icono al pasar el mouse */
+}
+
+/* Tooltip de cada skill */
+.tooltip {
+  position: absolute;            /* Se posiciona respecto al icono */
+  bottom: -25px;                 /* Ubicado debajo del icono */
+  left: 50%;                     /* Centrado horizontalmente */
+  transform: translateX(-50%);   /* Ajuste exacto al centro */
+  background: #ff6ec4;           /* Fondo rosa/lila neón */
+  color: #fff;                   /* Texto blanco */
+  font-size: 0.75rem;            /* Tamaño pequeño de letra */
+  padding: 3px 8px;              /* Espaciado interno */
+  border-radius: 5px;            /* Bordes redondeados */
+  opacity: 0;                     /* Inicialmente invisible */
+  pointer-events: none;          /* No interfiere con el puntero */
+  transition: opacity 0.3s ease; /* Suaviza aparición/desaparición */
+  white-space: nowrap;           /* Evita que el texto se divida en varias líneas */
+}
+
+/* Mostrar tooltip al hacer hover sobre el icono */
+#skillset div > div:hover .tooltip {
+  opacity: 1;                    /* Hace visible el tooltip */
+}

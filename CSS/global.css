@@ -1,0 +1,71 @@
+/* ===================== BODY Y FONDO ===================== */
+/* Configuración global del cuerpo de la página */
+body {
+  margin: 0;                                 /* Elimina márgenes por defecto */
+  font-family: 'Segoe UI', Tahoma, sans-serif; /* Fuente principal del sitio */
+  color: #fff;                               /* Color de texto por defecto */
+  background: #000;                          /* Fondo negro de toda la página */
+  overflow-x: hidden;                        /* Evita scroll horizontal */
+  position: relative;                        /* Para permitir posicionamiento absoluto de elementos hijos */
+}
+
+/* Canvas de estrellas en el fondo */
+#stars {
+  position: fixed;       /* Fijo en la ventana, no se mueve al hacer scroll */
+  top: 0; 
+  left: 0; 
+  width: 100%;           /* Ocupa toda la ventana */
+  height: 100%; 
+  z-index: 0;            /* Detrás de todo el contenido */
+  pointer-events: none;  /* Ignora interacciones del mouse */
+}
+
+/* ===================== SECCIONES ===================== */
+/* Estilo general de cada sección */
+section {
+  padding: 80px 20px;    /* Espaciado superior/inferior y lateral */
+  max-width: 1200px;     /* Ancho máximo de la sección */
+  margin: 0 auto;        /* Centrado horizontal */
+  text-align: center;    /* Centrar contenido dentro de la sección */
+  position: relative;    /* Para elementos hijos con posición absoluta */
+  z-index: 2;            /* Encima del canvas de estrellas */
+}
+
+/* Títulos principales de cada sección */
+section h3 {
+  font-size: 2rem;                                  /* Tamaño de fuente grande */
+  font-weight: 700;                                 /* Negrita */
+  background: linear-gradient(90deg, #ff6ec4, #7873f5); /* Gradiente rosa-lila */
+  -webkit-background-clip: text;                   /* Aplica el gradiente solo al texto */
+  -webkit-text-fill-color: transparent;            /* Hace el texto transparente para mostrar el gradiente */
+  margin-bottom: 10px;                              /* Separación inferior */
+}
+
+/* Línea decorativa debajo del título */
+section hr {
+  width: 60px;                 /* Largo de la línea */
+  height: 3px;                 /* Grosor de la línea */
+  background: #ff6ec4;         /* Color rosa */
+  border: none;                /* Elimina borde por defecto */
+  margin: 10px auto 40px auto; /* Centra horizontal y agrega margen arriba/abajo */
+  border-radius: 2px;          /* Bordes ligeramente redondeados */
+}
+
+/* ===================== RESPONSIVE ===================== */
+/* Ajustes para pantallas medianas (hasta 1000px) */
+@media (max-width: 1000px) {
+  .experience-card { width: 90%; }   /* Tarjetas de experiencia más estrechas */
+  .contact-form { width: 90%; }      /* Formulario de contacto más estrecho */
+  .principal { 
+    flex-direction: column;          /* Apilar verticalmente los elementos principales */
+    gap: 30px;                       /* Espacio entre bloques */
+    margin-top: 50px;                /* Ajusta margen superior */
+  }
+}
+
+/* Ajustes para pantallas pequeñas (hasta 500px) */
+@media (max-width: 500px) {
+  section h3 { font-size: 1.5rem; }  /* Títulos más pequeños */
+  #portfolio button { width: 180px; }/* Botones de portafolio más estrechos */
+  .experience-card { width: 95%; }   /* Tarjetas casi al 100% */
+}

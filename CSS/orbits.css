@@ -1,0 +1,226 @@
+/* ===================== ORBITAS ===================== */
+/* Contenedor principal que agrupa los anillos, las órbitas y el elemento central */
+.orbit-container {
+  position: relative;      /* Permite posicionar los elementos hijos de forma absoluta */
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;          /* Centra horizontalmente en la página */
+  z-index: 2;              /* Asegura que se muestre por encima de otros elementos */
+}
+
+/* Foto central (perfil o imagen principal) */
+.center-photo {
+  position: absolute;
+  top: 50%; left: 50%;                /* Centrada respecto al contenedor */
+  transform: translate(-50%, -50%);   /* Ajuste exacto al centro */
+  width: 180px; height: 180px;
+  border-radius: 50%;                 /* Forma circular */
+  overflow: hidden;                   /* Recorta la imagen al borde circular */
+  border: 4px solid #fff;             /* Borde blanco alrededor */
+  box-shadow: 0 0 20px #fff;          /* Brillo alrededor de la foto */
+}
+
+.center-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                  /* La imagen cubre el círculo sin deformarse */
+}
+
+/* ===================== ANILLOS ===================== */
+/* Círculos estáticos que sirven de guía visual para las órbitas */
+.ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  border: 1px solid rgba(255,255,255,0.15); /* Línea sutil y translúcida */
+  border-radius: 50%;                       /* Forma circular perfecta */
+  transform: translate(-50%, -50%);        /* Centrado en el contenedor */
+}
+
+/* Tamaños crecientes para cada anillo */
+.ring1 { width: 220px; height: 220px; }
+.ring2 { width: 260px; height: 260px; }
+.ring3 { width: 300px; height: 300px; }
+.ring4 { width: 340px; height: 340px; }
+.ring5 { width: 380px; height: 380px; }
+.ring6 { width: 420px; height: 420px; }
+
+/* ===================== ORBITADORES ===================== */
+/* Elementos invisibles que rotan, sirviendo de “camino” a los iconos */
+.orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: rotate linear infinite;  /* Rotación continua */
+  pointer-events: none;               /* Deja pasar el puntero al icono */
+}
+
+/* Tamaños y velocidades de rotación específicos para cada órbita */
+.orbit1 { width: 220px; height: 220px; animation-duration: 8s; }
+.orbit2 { width: 260px; height: 260px; animation-duration: 11s; }
+.orbit3 { width: 300px; height: 300px; animation-duration: 14s; }
+.orbit4 { width: 340px; height: 340px; animation-duration: 17s; }
+.orbit5 { width: 380px; height: 380px; animation-duration: 20s; }
+.orbit6 { width: 420px; height: 420px; animation-duration: 23s; }
+
+/* Animación de rotación completa de 360° */
+@keyframes rotate {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ===================== ICONOS ===================== */
+/* Iconos que giran sobre cada órbita y mantienen orientación fija */
+.icon {
+  position: absolute;
+  top: -25px; left: 50%;          /* Posición inicial sobre la órbita */
+  transform: translateX(-50%);    /* Centrado horizontalmente */
+  width: 50px; height: 50px;
+  border-radius: 50%;             /* Icono circular */
+  display: flex;                  /* Centrado de contenido interno */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2); /* Brillo sutil */
+  animation: counter-rotate linear infinite; /* Contrarrotación para mantener orientación */
+  cursor: pointer;                
+  pointer-events: auto;           /* Reactiva interacción */
+  z-index: 100;                   /* Sobre los anillos y órbitas */
+  transition: all 0.3s ease;      /* Suaviza hover y transformaciones */
+}
+
+/* Ajuste de velocidad de contrarrotación según órbita */
+.orbit1 .icon { animation-duration: 8s; }
+.orbit2 .icon { animation-duration: 11s; }
+.orbit3 .icon { animation-duration: 14s; }
+.orbit4 .icon { animation-duration: 17s; }
+.orbit5 .icon { animation-duration: 20s; }
+.orbit6 .icon { animation-duration: 23s; }
+
+/* Contrarrotación: evita que los iconos giren con la órbita */
+@keyframes counter-rotate {
+  0%   { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(-360deg); }
+}
+
+.icon img {
+  width: 60%;          /* Imagen ligeramente más pequeña que el contenedor */
+  transition: 0.3s ease;
+}
+
+/* ===================== EFECTO NEÓN ===================== */
+/* Resplandor blanco y aumento al pasar el mouse */
+.icon:hover {
+  background: rgba(255,255,255,0.1);
+  box-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #fff;
+  transform: translateX(-50%) scale(1.1);
+}
+
+.icon:hover img {
+  filter: drop-shadow(0 0 5px #fff)
+          drop-shadow(0 0 10px #fff)
+          drop-shadow(0 0 20px #fff);
+  transform: scale(1.3);
+}
+
+/* ===================== TOOLTIP ===================== */
+/* Texto emergente que aparece debajo del icono */
+.orbit-container .icon .tooltip {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.9);
+  color: #ff6ec4;                
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 5px #ff6ec4,
+              0 0 10px #ff6ec4,
+              0 0 15px #ff6ec4;  
+  opacity: 0;                    /* Inicialmente invisible */
+  pointer-events: none;          
+  transition: opacity 0.3s ease;
+  white-space: nowrap;           /* Evita que el texto se divida */
+}
+
+/* Aparece tooltip al pasar el mouse */
+.orbit-container .icon:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px); /* Pequeño movimiento hacia arriba */
+}
+
+/* Flecha inferior del tooltip */
+.tooltip::before {
+  border-bottom: 5px solid rgba(0,0,0,0.9);
+}
+
+/* ===================== HAMBURGUESA (no usada aquí) ===================== */
+#hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ===================== RESPONSIVE ===================== */
+/* Ajustes para pantallas medianas */
+@media (max-width: 1024px) {
+  .orbit-container {
+    width: 80vw;
+    height: 80vw;
+  }
+  .center-photo {
+    width: 30%;
+    height: 30%;
+  }
+  /* Iconos proporcional al tamaño de la órbita */
+  .orbit1 .icon, .orbit2 .icon, .orbit3 .icon,
+  .orbit4 .icon, .orbit5 .icon, .orbit6 .icon {
+    width: 15%;
+    height: 15%;
+  }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 768px) {
+  .orbit-container {
+    width: 90vw;
+    height: 90vw;
+  }
+  .center-photo {
+    width: 28%;
+    height: 28%;
+  }
+  .orbit1 .icon, .orbit2 .icon, .orbit3 .icon,
+  .orbit4 .icon, .orbit5 .icon, .orbit6 .icon {
+    width: 14%;
+    height: 14%;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .orbit-container {
+    width: 95vw;
+    height: 95vw;
+  }
+  .center-photo {
+    width: 26%;
+    height: 26%;
+    border-width: 3px;
+  }
+  .orbit1 .icon, .orbit2 .icon, .orbit3 .icon,
+  .orbit4 .icon, .orbit5 .icon, .orbit6 .icon {
+    width: 13%;
+    height: 13%;
+  }
+  .tooltip {
+    font-size: 0.65rem;
+  }
+}

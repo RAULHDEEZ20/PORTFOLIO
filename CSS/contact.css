@@ -1,0 +1,125 @@
+/* ===================== CONTACTO ===================== */
+
+/* Contenedor principal del área de contacto */
+.contact-wrapper {
+  display: flex;                 /* Flexbox para organizar contenido */
+  justify-content: center;       /* Centra horizontalmente los elementos */
+  align-items: flex-start;       /* Alinea los elementos al inicio vertical */
+  gap: 50px;                     /* Espacio entre formulario y otros elementos */
+  flex-wrap: wrap;               /* Permite que los elementos pasen a la siguiente línea en pantallas pequeñas */
+  margin-bottom: 60px;           /* Separación inferior */
+}
+
+/* Formulario de contacto */
+.contact-form {
+  display: flex;
+  flex-direction: column;        /* Apila los campos verticalmente */
+  gap: 20px;                     /* Espacio entre los campos */
+  background: #111;              /* Fondo oscuro */
+  padding: 35px;                 /* Espacio interno amplio */
+  border-radius: 20px;           /* Bordes redondeados */
+  border: 2px solid #7873f5;    /* Borde con color lila neón */
+  width: 500px;                  /* Ancho amplio para destacar */
+  box-shadow: 0 0 15px rgba(120, 115, 245, 0.2); /* Sombra suave */
+  transition: transform 0.3s ease; /* Animación suave al hover */
+}
+
+/* Efecto hover del formulario */
+.contact-form:hover {
+  transform: translateY(-2px);  /* Elevación sutil al pasar el mouse */
+}
+
+/* Estilo de etiquetas (labels) */
+.contact-form label {
+  display: flex;
+  flex-direction: column;        /* Apila texto y campo verticalmente */
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #fff;                   /* Color de texto blanco */
+}
+
+/* Campos de entrada y textarea */
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #555;       /* Borde neutro */
+  background: #000;              /* Fondo negro */
+  color: #fff;                   /* Texto blanco */
+  font-size: 1rem;
+  width: 100%;                   /* Ocupa todo el ancho del formulario */
+  box-sizing: border-box;        /* Evita desalineación por padding/borde */
+}
+
+/* Enfoque en campos */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #ff6ec4;    /* Borde lila al enfocar */
+  outline: none;                 /* Elimina outline por defecto */
+}
+
+/* Área de texto ajustable verticalmente */
+.contact-form textarea {
+  resize: vertical;              /* Solo permite ajustar altura */
+  min-height: 150px;             /* Altura mínima para comodidad */
+}
+
+/* Botón de enviar */
+.contact-form button {
+  padding: 14px;
+  border-radius: 15px;
+  border: none;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5); /* Gradiente rosa/lila */
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Animación suave de escala */
+}
+
+/* Hover del botón */
+.contact-form button:hover {
+  transform: scale(1.05);        /* Agrandamiento discreto */
+}
+
+/* ===================== FOOTER ===================== */
+
+/* Pie de página */
+footer {
+  text-align: center;
+  padding: 25px 20px;
+  background: rgba(0,0,0,0.6);   /* Fondo semitransparente */
+  color: #fff;
+  border-top: 1px solid #7873f5; /* Borde superior lila */
+  font-size: 0.85rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(5px);    /* Efecto de desenfoque de fondo */
+}
+
+/* Popup de agradecimiento tras enviar formulario */
+#thankyou-popup {
+  display: none;                 /* Inicialmente oculto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(120,115,245,0.95); /* Fondo lila semitransparente */
+  color: #fff;
+  padding: 25px 40px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  z-index: 9999;                 /* Por encima de todo */
+  text-align: center;
+  opacity: 0;                     /* Transparente inicialmente */
+  transition: opacity 0.5s ease;  /* Aparición suave */
+}
+
+/* Mostrar popup con leve efecto “pop” */
+#thankyou-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1.05); /* Escala ligera */
+}

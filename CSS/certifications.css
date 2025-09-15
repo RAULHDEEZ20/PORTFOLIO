@@ -1,0 +1,198 @@
+/* ===================== CERTIFICACIONES ===================== */
+
+/* Contenedor principal de las tarjetas de certificación */
+.certifications-container {
+    display: flex;               /* Organiza las tarjetas en fila */
+    flex-wrap: wrap;             /* Permite que las tarjetas pasen a la siguiente fila en pantallas pequeñas */
+    gap: 20px;                   /* Espacio entre cada tarjeta */
+    justify-content: center;     /* Centra las tarjetas horizontalmente */
+    margin-top: 20px;            /* Separación desde el título o secciones superiores */
+}
+
+/* Tarjeta individual de certificación */
+.cert-card {
+    background: rgba(255, 255, 255, 0.05);  /* Fondo semitransparente oscuro */
+    border: 1px solid rgba(255,255,255,0.1); /* Borde sutil */
+    border-radius: 10px;                     /* Bordes redondeados */
+    padding: 15px;                           /* Espaciado interno */
+    width: 200px;                             /* Ancho fijo */
+    height: 140px;                            /* Altura fija para uniformidad */
+    text-align: center;                       /* Centra texto horizontalmente */
+    cursor: pointer;                          /* Cursor interactivo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave al hover */
+    display: flex;                            /* Flex para contenido interno */
+    flex-direction: column;                   /* Distribuye contenido verticalmente */
+    justify-content: space-between;           /* Espacio uniforme entre título e información */
+}
+
+/* Efecto hover sobre la tarjeta */
+.cert-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Eleva ligeramente y aumenta tamaño */
+    box-shadow: 0 0 20px #ff6ec4, 0 0 25px #7873f5; /* Brillo neón */
+}
+
+/* Contenido interno de la tarjeta */
+.cert-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;          /* Distribuye título e información */
+    height: 100%;
+}
+
+/* Título de la certificación */
+.cert-content h4 {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.2;
+    flex-grow: 1;                            /* Ocupa el espacio disponible */
+    display: flex;
+    align-items: center;                     /* Centra verticalmente */
+    justify-content: center;                 /* Centra horizontalmente */
+}
+
+/* Información adicional de la certificación */
+.cert-info {
+    margin-top: auto;                        /* Empuja contenido hacia abajo */
+}
+
+.cert-content p {
+    font-size: 0.85rem;
+    margin: 2px 0;                           /* Espaciado entre líneas */
+}
+
+/* Nombre del emisor */
+.cert-issuer {
+    color: #ff6ec4;                          /* Color rosa/lila neón */
+}
+
+/* ===================== MODAL DE IMAGEN ===================== */
+
+/* Fondo del modal */
+.image-modal {
+    position: fixed;                          /* Ocupa toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);             /* Fondo oscuro semitransparente */
+    display: none;                             /* Inicialmente oculto */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;                             /* Encima de todo */
+    opacity: 0;                                /* Inicialmente transparente */
+    transition: opacity 0.3s ease;             /* Aparición suave */
+}
+
+/* Mostrar modal */
+.image-modal.show {
+    opacity: 1;
+}
+
+/* Contenedor de la imagen */
+.image-content {
+    max-width: 60vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    overflow: hidden;                          /* Evita que la imagen se salga del contenedor */
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);     /* Sombra del modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.7);                     /* Escala inicial */
+    transition: transform 0.3s ease;
+}
+
+/* Animación al mostrar imagen */
+.image-modal.show .image-content {
+    transform: scale(1);
+}
+
+/* Imagen dentro del modal */
+.image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;                       /* Mantiene proporciones */
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s;       /* Pequeño delay para efecto suave */
+}
+
+/* Aparece la imagen cuando el modal está activo */
+.image-modal.show .image-content img {
+    opacity: 1;
+}
+
+/* Botón de cerrar modal */
+.image-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+    z-index: 10000;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover del botón de cerrar */
+.image-close:hover {
+    background: rgba(255,0,0,0.8);
+    transform: scale(1.1);
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    .cert-card {
+        width: calc(50% - 15px);  /* Dos tarjetas por fila */
+        height: 140px;
+    }
+    
+    .image-content {
+        max-width: 90vw;
+        max-height: 80vh;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .cert-card {
+        width: 100%;             /* Una tarjeta por fila */
+        height: 130px;
+        padding: 15px;
+    }
+    
+    .cert-content h4 {
+        font-size: 1rem;
+    }
+}
+
+/* ===================== ESTILOS DE SECCIÓN ===================== */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+hr {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    border: none;
+    margin: 0 auto 40px;
+}

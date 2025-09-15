@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raúl H.</title>
+
+  <!-- ===================== ESTILOS CSS =====================
+       Cada archivo maneja una parte específica del diseño -->
+  <link rel="stylesheet" href="/CSS/global.css">        <!-- Estilos globales: body, fondo, canvas de estrellas y estructura general. -->
+  <link rel="stylesheet" href="/CSS/navigation.css">    <!-- Estilos para la barra de navegación fija -->
+  <link rel="stylesheet" href="/CSS/header.css">    <!-- Estilos del encabezado: nombre, descripción y redes sociales -->
+  <link rel="stylesheet" href="/CSS/orbits.css">       <!-- Animaciones y estilos de las órbitas e imagen central -->
+  <link rel="stylesheet" href="/CSS/projects.css">     <!-- Sección de proyectos/portafolio -->
+  <link rel="stylesheet" href="/CSS/contact.css">      <!-- Formulario de contacto y popup de agradecimiento -->
+  <link rel="stylesheet" href="/CSS/skills.css">   <!-- Sección de habilidades (Skillset) -->
+  <link rel="stylesheet" href="/CSS/certifications.css"> <!-- Sección de certificaciones -->
+</head>
+<body>
+
+  <!-- ===================== CANVAS DE ESTRELLAS =====================
+       Fondo animado de estrellas generado con JavaScript -->
+  <canvas id="stars"></canvas>
+
+  <!-- ===================== BARRA DE NAVEGACIÓN =====================
+       Menú superior con enlaces a cada sección de la página -->
+  <nav id="navbar">
+    <div></div> <!-- Espaciador para centrar el menú -->
+    <ul>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#skillset">Skillset</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+  <div class="principal">
+
+    <!-- ===================== ENCABEZADO =====================
+         Presentación personal, descripción y enlaces a redes sociales -->
+    <header>
+      <h1>Raúl Hernández Martínez</h1>
+      <h2>Developer Jr</h2>
+      <p>Hi! I'm Raúl 😄. I'm passionate about web development and enjoy creating projects that combine design and functionality. My goal is for every website or application I build to not only look good, but also be easy to use, fast, and reliable. I like technology to tell stories and make people's lives simpler and more enjoyable.</p>
+
+      <!-- Redes sociales y botón de descarga de CV -->
+      <nav id="social-media">
+        <a href="https://www.linkedin.com/in/raul-hernandez-martinez-a86b3a33a/">
+          <img src="/APOYO/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/RAULHDEEZ20">
+          <img src="/APOYO/github.png" alt="GitHub">
+        </a>
+        <a href="/APOYO/CV_Raul_Hernandez_Martinez.pdf" download="CV_Raul_Hernandez_Martinez.pdf">
+          <button class="CV">Download CV</button>
+        </a>
+      </nav>
+    </header>
+
+    <!-- ===================== ORBITAS =====================
+         Imagen de perfil en el centro con íconos de habilidades que orbitan -->
+    <div class="orbit-container">
+
+        <!-- Foto central -->
+        <div class="center-photo">
+            <img src="/APOYO/Foto_perfil.jpg" alt="Mi_foto">
+        </div>
+
+        <!-- Anillos que marcan las trayectorias de las órbitas -->
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <div class="ring ring4"></div>
+        <div class="ring ring5"></div>
+        <div class="ring ring6"></div>
+
+        <!-- Íconos de habilidades que giran en sus respectivas órbitas -->
+        <div class="orbit orbit1">
+            <div class="icon" data-name="HTML">
+                <img src="/APOYO/icon_html.svg" alt="HTML">
+                <span class="tooltip">HTML</span>
+            </div>
+        </div>
+
+        <div class="orbit orbit2">
+            <div class="icon" data-name="CSS">
+                <img src="/APOYO/icon_css.svg" alt="CSS">
+                <span class="tooltip">CSS</span>
+            </div>
+        </div>
+
+        <div class="orbit orbit3">
+            <div class="icon" data-name="JAVASCRIPT">
+                <img src="/APOYO/icon_javascript.svg" alt="JAVASCRIPT">
+                <span class="tooltip">JAVASCRIPT</span>
+            </div>
+        </div>
+
+        <div class="orbit orbit4">
+            <div class="icon" data-name="SQL">
+                <img src="/APOYO/icon_sql.svg" alt="SQL">
+                <span class="tooltip">SQL</span>
+            </div>
+        </div>
+
+        <div class="orbit orbit5">
+            <div class="icon" data-name="REACT">
+                <img src="/APOYO/icon_react.svg" alt="REACT">
+                <span class="tooltip">REACT</span>
+            </div>
+        </div>
+
+        <div class="orbit orbit6">
+            <div class="icon" data-name="PYTHON">
+                <img src="/APOYO/icon_python.svg" alt="PYTHON">
+                <span class="tooltip">PYTHON</span>
+            </div>
+        </div>
+
+    </div>
+
+  </div> <!-- FIN PRINCIPAL -->
+
+<!-- ===================== SECCIONES DE CONTENIDO ===================== -->
+
+<!-- ===================== PORTAFOLIO =====================
+     Galería de proyectos con imágenes y títulos -->
+<br><br><br><br>
+<section id="portfolio">
+  <h3>Portfolio</h3>
+  <hr class="hr-animated" />
+  <div class="portfolio-items">
+    <button>
+      <img src="assets/img/portfolio/1.png" alt="Proyecto 1" />
+      <h4>Proyecto 1</h4>
+    </button>
+    <button>
+      <img src="assets/img/portfolio/2.png" alt="Proyecto 2" />
+      <h4>Proyecto 2</h4>
+    </button>
+    <button>
+      <img src="assets/img/portfolio/3.png" alt="Proyecto 3" />
+      <h4>Proyecto 3</h4>
+    </button>
+  </div>
+</section>
+
+<!-- ===================== HABILIDADES =====================
+     Lista de íconos que representan el stack de tecnologías -->
+<section id="skillset" class="even">
+  <h3>Skills</h3>
+  <hr />
+  <div class="skills-container">
+    <div><img src="/APOYO/icon_html.svg" /><span class="tooltip">HTML</span></div>
+    <div><img src="/APOYO/icon_css.svg" /><span class="tooltip">CSS</span></div>
+    <div><img src="/APOYO/icon_javascript.svg" /><span class="tooltip">JAVASCRIPT</span></div>
+    <div><img src="/APOYO/icon_sql.svg" /><span class="tooltip">SQL</span></div>
+    <div><img src="/APOYO/icon_python.svg" /><span class="tooltip">PYTHON</span></div>
+    <div><img src="/APOYO/icon_react.svg" /><span class="tooltip">REACT</span></div>
+  </div>
+</section>
+
+<!-- ===================== CERTIFICACIONES =====================
+     Tarjetas con información y vista ampliada de cada certificado -->
+<section id="certifications" class="even">
+  <h3>Certifications</h3>
+  <hr />
+  <div class="certifications-container">
+
+    <!-- Cada tarjeta muestra un certificado y abre una imagen en modal -->
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_META.jpg">
+      <div class="cert-content">
+        <h4>Introduction to Front-End Development</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Meta</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_JAVASCRIPT.jpg">
+      <div class="cert-content">
+        <h4>JavaScript / Web Programming</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Academia X</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_DOM.jpg">
+      <div class="cert-content">
+        <h4>DOM Manipulation / JS</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Academia X</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_HTML.jpg">
+      <div class="cert-content">
+        <h4>Frontend Development / HTML</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Academia X</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_CSS.jpg">
+      <div class="cert-content">
+        <h4>CSS / Styling Web</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Academia X</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_SQL.jpg">
+      <div class="cert-content">
+        <h4>SQL / Databases</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Academia X</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_PYTHON.jpg">
+      <div class="cert-content">
+        <h4>Python / Fundamentals</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Santander</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_PYTHON0.jpg">
+      <div class="cert-content">
+        <h4>Python / Web Development</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Academia X</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal para mostrar la imagen completa del certificado -->
+<div class="image-modal" id="imageModal">
+  <div class="image-content">
+    <span class="image-close" id="imageClose">&times;</span>
+    <img id="certImage" src="" alt="Certification">
+  </div>
+</div>
+
+<!-- ===================== CONTACTO =====================
+     Formulario para enviar mensajes y popup de agradecimiento -->
+<section id="contact" class="even">
+  <h3>Contact</h3>
+  <hr />
+  
+  <div class="contact-wrapper">
+    <form id="contact-form" class="contact-form" action="https://formspree.io/f/xovlolda" method="POST">
+      
+      <!-- Campo para correo electrónico -->
+      <label for="email">Your email:</label>
+      <input type="email" name="email" id="email" placeholder="you@example.com" required>
+      
+      <!-- Campo para mensaje -->
+      <label for="message">Your message:</label>
+      <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
+      
+      <!-- Botón de envío -->
+      <button type="submit">Send</button>
+    </form>
+
+    <!-- Mensaje de confirmación tras enviar el formulario -->
+    <div id="thankyou-popup">
+      😀 Thank you for your message! I’ll reply soon. 😊
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PIE DE PÁGINA ===================== -->
+<footer>
+  <small>Developed and designed by Raúl Hernández Martínez. 2025.</small>
+</footer>
+
+<!-- ===================== SCRIPTS =====================
+     Archivos JavaScript para interactividad -->
+<script src="/JAVASCRIPT/contact.js"></script>      <!-- Envía el formulario y gestiona el popup de agradecimiento -->
+<script src="/JAVASCRIPT/stars.js"></script>          <!-- Genera el fondo animado de estrellas -->
+<script src="/JAVASCRIPT/menu.js"></script>          <!-- Controla el menú de navegación (scroll, efectos) -->
+<script src="/JAVASCRIPT/certifications.js"></script><!-- Muestra las imágenes de las certificaciones en modal -->
+
+</body>
+</html>
+

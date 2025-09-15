@@ -1,0 +1,153 @@
+/* ===================== PRINCIPAL ===================== */
+/* Contenedor principal que agrupa el header y las órbitas */
+.principal {
+  display: flex;               /* Flexbox para organizar contenido horizontal */
+  align-items: flex-start;     /* Alinea verticalmente al inicio */
+  justify-content: center;     /* Centra horizontalmente */
+  gap: 250px;                  /* Separación entre header y órbitas */
+  width: 90%;
+  max-width: 1200px;           /* Limita ancho máximo */
+  margin: 120px auto 50px auto;/* Margen superior e inferior */
+  position: relative;          /* Para posicionamiento de elementos hijos */
+  z-index: 2;                  /* Encima de canvas de fondo */
+}
+
+/* ===================== HEADER ===================== */
+/* Contenedor del header con nombre, rol y descripción */
+.principal header {
+  position: relative;
+  max-width: 400px;            /* Limita ancho del header */
+  text-align: left;            /* Texto alineado a la izquierda */
+  z-index: 2;                  /* Asegura que esté sobre otros elementos */
+}
+
+/* Nombre principal */
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5); /* Degradado */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);            /* Sombra sutil */
+  margin: 0 0 10px 0;                                  /* Espacio inferior */
+}
+
+/* Rol o título secundario */
+header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #cfd3e3;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);           /* Sombra ligera */
+  margin: 0 0 15px 0;
+}
+
+/* Descripción del perfil */
+header p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  max-width: 350px;            /* Limita ancho de lectura */
+  text-shadow: 0 0 3px rgba(0,0,0,0.2);              /* Sutil resalte de texto */
+}
+
+/* ===================== REDES SOCIALES ===================== */
+/* Contenedor de iconos y botón CV */
+#social-media {
+  display: flex;
+  align-items: center;
+  gap: 12px;                   /* Separación entre iconos */
+  margin-top: 35px;
+  z-index: 2;
+}
+
+/* Iconos de redes sociales */
+#social-media a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;          /* Forma circular */
+  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff; /* Efecto resplandor */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+}
+
+/* Animación al pasar el mouse sobre iconos */
+#social-media a:hover img {
+  transform: scale(1.2);       /* Aumenta tamaño */
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 25px #fff; /* Resalta brillo */
+}
+
+/* Botón para descargar CV */
+#social-media .CV {
+  padding: 6px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  border-radius: 20px;
+  box-shadow: 0 0 5px #ff6ec4, 0 0 10px #7873f5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin-left: 60px;            /* Separación del último icono */
+}
+
+/* Animación al pasar el mouse sobre el botón */
+#social-media .CV:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px #ff6ec4, 0 0 20px #7873f5, 0 0 25px #ff6ec4;
+}
+
+/* ===================== RESPONSIVE ===================== */
+/* Ajustes para pantallas medianas (1024px) */
+@media (max-width: 1024px) {
+  .principal {
+    gap: 120px;               /* Reduce espacio entre header y órbitas */
+    width: 95%;
+    margin: 100px auto 40px auto;
+  }
+  header h1 { font-size: 2.5rem; }
+  header h2 { font-size: 1.4rem; }
+  header p { font-size: 0.95rem; }
+}
+
+/* Tablets y pantallas pequeñas (768px) */
+@media (max-width: 768px) {
+  .principal {
+    flex-direction: column;   /* Apila header y órbitas verticalmente */
+    align-items: center;      /* Centra horizontalmente */
+    gap: 60px;                /* Separación entre bloques */
+    margin: 80px auto 40px auto;
+  }
+
+  .principal header {
+    text-align: center;       /* Centra texto */
+    max-width: 90%;           /* Ajusta ancho máximo */
+  }
+
+  header h1 { font-size: 2.2rem; }
+  header h2 { font-size: 1.3rem; }
+  header p { max-width: 90%; font-size: 0.9rem; }
+
+  #social-media {
+    justify-content: center;  /* Centra iconos horizontalmente */
+    flex-wrap: wrap;          /* Permite saltar a la siguiente línea si hace falta */
+  }
+
+  #social-media .CV {
+    margin-left: 5px;         /* Ajusta margen lateral en móvil */
+    margin-top: 2px;          /* Espacio superior pequeño */
+  }
+}
+
+/* Móviles pequeños (480px) */
+@media (max-width: 480px) {
+  header h1 { font-size: 1.9rem; }
+  header h2 { font-size: 1.1rem; }
+  header p { font-size: 0.85rem; }
+
+  #social-media a img { width: 35px; height: 35px; }
+
+  #social-media .CV {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+}
+

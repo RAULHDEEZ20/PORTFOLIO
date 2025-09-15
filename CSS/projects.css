@@ -1,0 +1,40 @@
+/* ===================== PORTFOLIO CARDS ===================== */
+
+/* Contenedor de los proyectos */
+#portfolio div {
+  display: flex;                 /* Coloca los elementos en línea horizontal */
+  justify-content: center;       /* Centra las cards horizontalmente */
+  gap: 20px;                     /* Espacio entre cada card */
+  flex-wrap: wrap;               /* Permite que las cards se envuelvan a la siguiente línea en pantallas pequeñas */
+}
+
+/* Estilo de cada card/proyecto (botón) */
+#portfolio button {
+  background: #111;              /* Fondo oscuro */
+  border: 2px solid #7873f5;    /* Borde morado degradado */
+  border-radius: 15px;           /* Esquinas redondeadas */
+  overflow: hidden;              /* Evita que el contenido sobresalga */
+  cursor: pointer;               /* Cambia el cursor al pasar sobre la card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave al hover */
+  width: 220px;                  /* Ancho fijo de la card */
+}
+
+/* Efecto hover en la card */
+#portfolio button:hover {
+  transform: scale(1.05);        /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 0 15px #ff6ec4, 0 0 25px #7873f5; /* Resplandor de colores degradados */
+}
+
+/* Imagen dentro de la card */
+#portfolio button img {
+  width: 100%;                   /* Ocupa todo el ancho del botón */
+  display: block;                /* Quita espacio inferior típico de imágenes inline */
+}
+
+/* Título del proyecto dentro de la card */
+#portfolio button h4 {
+  margin: 10px 0;                /* Separación superior e inferior */
+  color: #fff;                   /* Texto blanco */
+  font-size: 1.1rem;             /* Tamaño de letra */
+  font-weight: 600;              /* Semi-bold */
+}
