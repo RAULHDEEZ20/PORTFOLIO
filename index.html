@@ -22,8 +22,8 @@
        Fondo animado de estrellas generado con JavaScript -->
   <canvas id="stars"></canvas>
 
-  <!-- ===================== BARRA DE NAVEGACIÓN =====================
-       Menú superior con enlaces a cada sección de la página -->
+  <!-- ===================== BARRA DE NAVEGACIÓN ===================== -->
+
   <nav id="navbar">
     <div></div> <!-- Espaciador para centrar el menú -->
     <ul>
@@ -37,14 +37,13 @@
   <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
   <div class="principal">
 
-    <!-- ===================== ENCABEZADO =====================
-         Presentación personal, descripción y enlaces a redes sociales -->
+    <!-- ===================== ENCABEZADO ===================== -->
+    
     <header>
       <h1>Raúl Hernández Martínez</h1>
       <h2>Developer Jr</h2>
       <p>Hi! I'm Raúl 😄. I'm passionate about web development and enjoy creating projects that combine design and functionality. My goal is for every website or application I build to not only look good, but also be easy to use, fast, and reliable. I like technology to tell stories and make people's lives simpler and more enjoyable.</p>
 
-      <!-- Redes sociales y botón de descarga de CV -->
       <nav id="social-media">
         <a href="https://www.linkedin.com/in/raul-hernandez-martinez-a86b3a33a/">
           <img src="/APOYO/linkedin.png" alt="LinkedIn">
@@ -52,17 +51,19 @@
         <a href="https://github.com/RAULHDEEZ20">
           <img src="/APOYO/github.png" alt="GitHub">
         </a>
+        <a href="https://app.netlify.com/teams/raul-1835/projects?creator=me&visibility=public">
+          <img src="/APOYO/netlify.png" alt="Netlify">
+        </a>
         <a href="/APOYO/CV_Raul_Hernandez_Martinez.pdf" download="CV_Raul_Hernandez_Martinez.pdf">
           <button class="CV">Download CV</button>
         </a>
       </nav>
     </header>
 
-    <!-- ===================== ORBITAS =====================
-         Imagen de perfil en el centro con íconos de habilidades que orbitan -->
+    <!-- ===================== ORBITAS ===================== -->
+    
     <div class="orbit-container">
 
-        <!-- Foto central -->
         <div class="center-photo">
             <img src="/APOYO/Foto_perfil.jpg" alt="Mi_foto">
         </div>
@@ -120,24 +121,26 @@
 
     </div>
 
-  </div> <!-- FIN PRINCIPAL -->
+  </div> 
 
-<!-- ===================== SECCIONES DE CONTENIDO ===================== -->
-
-<!-- ===================== PORTAFOLIO =====================
-     Galería de proyectos con imágenes y títulos -->
+<!-- ===================== PORTAFOLIO ===================== -->
+   
 <br><br><br><br>
 <section id="portfolio">
   <h3>Portfolio</h3>
   <hr class="hr-animated" />
   <div class="portfolio-items">
     <button>
-      <img src="assets/img/portfolio/1.png" alt="Proyecto 1" />
-      <h4>Proyecto 1</h4>
+      <a href="https://raulsfeelingacademy.netlify.app/">
+      <img src="./APOYO/proyecto1.jpg" alt="Proyecto 1" />
+      </a>
+      <h4>Raúl's Academy</h4>
     </button>
     <button>
-      <img src="assets/img/portfolio/2.png" alt="Proyecto 2" />
-      <h4>Proyecto 2</h4>
+      <a href="https://preeminent-sawine-d568e8.netlify.app/">
+      <img src="./APOYO/proyecto2.jpg" alt="Proyecto 2" />
+      </a>
+      <h4>Metas App</h4>
     </button>
     <button>
       <img src="assets/img/portfolio/3.png" alt="Proyecto 3" />
@@ -146,8 +149,8 @@
   </div>
 </section>
 
-<!-- ===================== HABILIDADES =====================
-     Lista de íconos que representan el stack de tecnologías -->
+<!-- ===================== HABILIDADES ===================== -->
+   
 <section id="skillset" class="even">
   <h3>Skills</h3>
   <hr />
@@ -161,8 +164,8 @@
   </div>
 </section>
 
-<!-- ===================== CERTIFICACIONES =====================
-     Tarjetas con información y vista ampliada de cada certificado -->
+<!-- ===================== CERTIFICACIONES ===================== -->
+     
 <section id="certifications" class="even">
   <h3>Certifications</h3>
   <hr />
@@ -172,6 +175,24 @@
     <div class="cert-card" data-img="/APOYO/CERTIFICADO_META.jpg">
       <div class="cert-content">
         <h4>Introduction to Front-End Development</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Meta</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_JAVASCRIPT_META.jpg">
+      <div class="cert-content">
+        <h4>Programming with JavaScript</h4>
+        <div class="cert-info">
+          <p class="cert-issuer">Meta</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="/APOYO/CERTIFICADO_CONTROL_VERSION.jpg">
+      <div class="cert-content">
+        <h4>CONTROL VERSION</h4>
         <div class="cert-info">
           <p class="cert-issuer">Meta</p>
         </div>
@@ -260,19 +281,15 @@
   <div class="contact-wrapper">
     <form id="contact-form" class="contact-form" action="https://formspree.io/f/xovlolda" method="POST">
       
-      <!-- Campo para correo electrónico -->
       <label for="email">Your email:</label>
       <input type="email" name="email" id="email" placeholder="you@example.com" required>
       
-      <!-- Campo para mensaje -->
       <label for="message">Your message:</label>
       <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
       
-      <!-- Botón de envío -->
       <button type="submit">Send</button>
     </form>
 
-    <!-- Mensaje de confirmación tras enviar el formulario -->
     <div id="thankyou-popup">
       😀 Thank you for your message! I’ll reply soon. 😊
     </div>
@@ -284,12 +301,12 @@
   <small>Developed and designed by Raúl Hernández Martínez. 2025.</small>
 </footer>
 
-<!-- ===================== SCRIPTS =====================
-     Archivos JavaScript para interactividad -->
-<script src="/JAVASCRIPT/contact.js"></script>      <!-- Envía el formulario y gestiona el popup de agradecimiento -->
-<script src="/JAVASCRIPT/stars.js"></script>          <!-- Genera el fondo animado de estrellas -->
-<script src="/JAVASCRIPT/menu.js"></script>          <!-- Controla el menú de navegación (scroll, efectos) -->
-<script src="/JAVASCRIPT/certifications.js"></script><!-- Muestra las imágenes de las certificaciones en modal -->
+<!-- ===================== SCRIPTS ===================== -->
+
+<script src="/JAVASCRIPT/contact.js"></script>      
+<script src="/JAVASCRIPT/stars.js"></script>          
+<script src="/JAVASCRIPT/menu.js"></script>          
+<script src="/JAVASCRIPT/certifications.js"></script>
 
 </body>
 </html>
